@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    background-color: white; /* White background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    perspective: 1000px; /* Set perspective for 3D effect */
+    position: relative; /* Allow absolute positioning of the popup image */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+{
+
+
+.spinning-image {
+    width: 80vw; /* Responsive width for mobile */
+    max-width: 500px; /* Maximum width */
+    transform-origin: center; /* Set the pivot point to center */
+    transition: transform 0.5s; /* Smooth transition */
+    user-select: none; /* Prevent image selection */
+}
+
+.popup-image {
+    position: absolute; /* Position it absolutely */
+    width: 40vw; /* Responsive width for the popup image (200% larger than original) */
+    max-width: 400px; /* Maximum width for the popup image */
+    display: none; /* Initially hidden */
+    opacity: 0; /* Start with opacity 0 */
+    transition: opacity 0.5s ease-in-out; /* Smooth fade transition */
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 600px) {
+    .spinning-image {
+        width: 70vw; /* Slightly smaller width on smaller screens */
+    }
+
+    .popup-image {
+        width: 60vw; /* Increase size of popup image on smaller screens */
+        max-width: 300px; /* Adjust maximum size */
+    }
+}

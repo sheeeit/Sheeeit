@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive 3D Spinning Image</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: white; /* White background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            perspective: 1000px; /* Set perspective for 3D effect */
+            overflow: hidden; /* Prevent scrolling */
+            position: relative; /* Add this for button positioning */
+        }
+
+        .title {
+            position: absolute; /* Position title at the top center */
+            top: 50%; /* Space from the top */
+            left: 50%; /* Center the title horizontally */
+            transform: translateX(-50%); /* Adjust position */
+            font-family: 'Helvetica Neue Bold', sans-serif; /* Font style */
+            color: black; /* Text color */
+            font-size: 300px; /* Font size */
+            opacity: 0.05; /* Full opacity */
+        }
+
+        .spinning-image {
+            width: 80vw; /* Responsive width for mobile */
+            max-width: 500px; /* Maximum width */
+            transform-origin: center; /* Set the pivot point to center */
+            transition: transform 0.5s; /* Smooth transition */
+            user-select: none; /* Prevent image selection */
+        }
+
+        .popup-image {
+            position: absolute; /* Position it absolutely */
+            width: 20vw; /* Responsive width for the popup image */
+            max-width: 200px; /* Maximum width for the popup image */
+            display: none; /* Initially hidden */
+            opacity: 0; /* Start with opacity 0 */
+            transition: opacity 0.5s ease-in-out; /* Smooth fade transition */
+        }
+
+        /* Adjust for smaller screens */
+        @media (max-width: 600px) {
+            .spinning-image {
+                width: 70vw; /* Slightly smaller width on smaller screens */
+            }
+
+            .popup-image {
+                width: 60vw; /* Increase size of popup image on smaller screens */
+                max-width: 300px; /* Adjust maximum size */
+            }
+        }
+
+        /* Button styles */
+        .button-container {
+            position: absolute; /* Position buttons at the bottom */
+            bottom: 20px; /* Space from the bottom */
+            left: 50%; /* Center the container horizontally */
+            transform: translateX(-50%); /* Adjust position */
+            display: flex; /* Flexbox for spacing */
+            gap: 10px; /* Space between buttons */
+        }
+
+        .button-image {
+            width: 100px; /* Set width for the button images */
+            height: 100px; /* Set height for the button images */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: transform 0.3s; /* Smooth scale transition */
+        }
+
+        .button-image:hover {
+            transform: scale(1.1); /* Slightly enlarge on hover */
+        }
+
+        /* Transparent text box */
+        .text-box {
+            position: absolute;
+            bottom: 130px; /* Position above the buttons */
+            left: 50%; /* Center the text box */
+            transform: translateX(-50%); /* Adjust position */
+            background-color: transparent; /* Transparent background */
+            padding: 10px; /* Padding around the text */
+            border-radius: 5px; /* Rounded corners */
+            font-family: 'Helvetica Neue', sans-serif; /* Font style */
+            color: gray; /* Text color */
+            opacity: 0.75; /* Opacity */
+            font-size: 16px; /* Font size */
+            text-align: center; /* Center align text */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title">$SHEEEIT</div>
+    <img src="https://assets.onecompiler.app/42u9j4a2h/42v8vnjyd/shiet.png" alt="Interactive 3D Spinning Image" class="spinning-image" id="image">
+    <img src="https://assets.onecompiler.app/42u9j4a2h/42v8k23c7/text%20copy.png" alt="Popup Image" class="popup-image" id="popup 1">
+    <img src="https://assets.onecompiler.app/42u9j4a2h/42v8vnjyd/watermelon.png" alt="Popup Image" class="popup-image" id="popup 2">
+    <img src="https://assets.onecompiler.app/42u9j4a2h/42v8vnjyd/buck.png" alt="Popup Image" class="popup-image" id="popup 3">
+
+    <!-- Audio Element -->
+    <audio id="background-audio" src="your-audio-file-url.mp3" loop></audio>
+
+    <div class="button-container">
+        <img src="https://assets.onecompiler.app/42u9j4a2h/42v8vnjyd/DEX.png" alt="Button 1" class="button-image" onclick="window.location.href='https://dexscreener.com/'">
+        <img src="https://assets.onecompiler.app/42u9j4a2h/42v8vnjyd/TELE.png" alt="Button 3" class="button-image" onclick="window.location.href='https://t.me/+Q_YFnz_-qgoyMmIx'">
+        <img src="https://assets.onecompiler.app/42u9j4a2h/42v8vnjyd/X.png" alt="Button 2" class="button-image" onclick="window.location.href='https://x.com'">
+    </div>
+
+    <div class="text-box">Scroll to zoom, drag to spin</div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
